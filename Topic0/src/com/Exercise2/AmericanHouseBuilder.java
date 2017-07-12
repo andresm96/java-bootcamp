@@ -9,20 +9,20 @@ public class AmericanHouseBuilder implements HouseBuilder {
 	}
 
 	@Override
-	public void buildWalls() {
-		house.setWalls("wood");
+	public void buildWalls(String wallType) {
+		house.setWalls(wallType);
 
 	}
 
 	@Override
-	public void buildDoor() {
-		house.setDoor("Mahogany door");
+	public void buildDoor(String doorType) {
+		house.setDoor(doorType);
 
 	}
 
 	@Override
-	public void buildRoof() {
-		house.setRoof("Gable roof");
+	public void buildRoof(String roofType) {
+		house.setRoof(roofType);
 
 	}
 

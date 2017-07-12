@@ -8,10 +8,10 @@ public class HouseDirector {
 		this.houseBuilder = houseBuilder;
 	}
 
-	public void constructMeal() {
-		houseBuilder.buildWalls();
-		houseBuilder.buildDoor();
-		houseBuilder.buildRoof();
+	public void constructHouse(String wallType, String doorType, String roofType) {
+		houseBuilder.buildWalls(wallType);
+		houseBuilder.buildDoor(doorType);
+		houseBuilder.buildRoof(roofType);
 	}
 
 	public House getHouse() {

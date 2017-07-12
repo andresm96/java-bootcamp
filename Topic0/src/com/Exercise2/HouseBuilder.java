@@ -2,11 +2,11 @@ package com.Exercise2;
 
 public interface HouseBuilder {
 
-	public void buildWalls();
+	public void buildWalls(String wallType);
 
-	public void buildDoor();
+	public void buildDoor(String doorType);
 
-	public void buildRoof();
+	public void buildRoof(String roofType);
 
 	public House getHouse();
 }

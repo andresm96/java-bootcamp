@@ -21,11 +21,11 @@ public class Hospital {
 	Map<Doctor.Speciality, Doctor> doctors = new HashMap<Doctor.Speciality, Doctor>();
 	List<Patient> patients = new ArrayList<Patient>();
 
-	static {
-		specialityHandlingForDisease.put(Disease.EYE, Speciality.OPTHALMOLOGIST);
+	
+		/*specialityHandlingForDisease.put(Disease.EYE, Speciality.OPTHALMOLOGIST);
 		specialityHandlingForDisease.put(Disease.HEART_PATIENT, Speciality.SURGEON);
-		specialityHandlingForDisease.put(Disease.EARNOSE, Speciality.ENT);
-	}
+		specialityHandlingForDisease.put(Disease.EARNOSE, Speciality.ENT);*/
+	
 
 	public void addDoctor(Doctor doctor) {
 		doctors.put(doctor.getSpeciality(), doctor);
@@ -49,6 +49,10 @@ public class Hospital {
 
 	private Hospital(String name) {
 		this.name = name;
+		
+		specialityHandlingForDisease.put(Disease.EYE, Speciality.OPTHALMOLOGIST);
+		specialityHandlingForDisease.put(Disease.HEART_PATIENT, Speciality.SURGEON);
+		specialityHandlingForDisease.put(Disease.EARNOSE, Speciality.ENT);
 	}
 
 	public static Hospital getInstance(String name) { // Singleton Pattern
