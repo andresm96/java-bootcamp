@@ -27,14 +27,33 @@ public class ShoppingCart {
 		}
 		return sum;
 	}
-	
-	public void pay(PaymentStrategy paymentMethod){
-		double amount = getTotal();
-		paymentMethod.pay(amount);
-	}
-	
-	public List<Product> getItems(){
+
+	public List<Product> getItems() {
 		return items;
+	}
+
+	public Product getCheapest() {
+
+		Product cheapest = items.get(0);
+
+		for (Product product : items) {
+			if (product.getPrice() < cheapest.getPrice()) {
+				cheapest = product;
+			}
+		}
+		return cheapest;
+	}
+
+	public Product getExpensive() {
+
+		Product expensive = items.get(0);
+
+		for (Product product : items) {
+			if (product.getPrice() > expensive.getPrice()) {
+				expensive = product;
+			}
+		}
+		return expensive;
 	}
 
 	public void listItems() {
@@ -46,6 +65,7 @@ public class ShoppingCart {
 			for (Product product : items) {
 				System.out.println(product.toString());
 			}
+			System.out.println("Total: " + this.getTotal());
 		}
 
 	}
