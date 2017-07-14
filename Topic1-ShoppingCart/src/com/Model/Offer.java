@@ -3,7 +3,11 @@ package com.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Offer {
+public class Offer extends Item {
+
+	/*
+	 * I assume an offer as an individual item in the cart
+	 */
 
 	private List<Product> products;
 	private String name;
@@ -22,7 +26,15 @@ public class Offer {
 		products.remove(product);
 	}
 
-	public double getPrice() {
+	public String getName() {
+		return name;
+	}
+
+	public Double getPrice() {
+
+		/*
+		 * Just an example of quantity and discount
+		 */
 
 		Double total = getTotal();
 		Double discount = 0.0;
@@ -46,11 +58,13 @@ public class Offer {
 		return total;
 	}
 
-	public void print() {
-		System.out.println("Offer Name: " + name + " Price: $" + getPrice());
+	@Override
+	public String toString() {
+		String offer = "Offer Name: " + name + " Price: $ " + getPrice();
 		for (Product product : products) {
-			System.out.println("\t" + product.toString());
+			offer += "\n\t" + product.toString();
 		}
-		System.out.println();
+		return offer;
 	}
+
 }

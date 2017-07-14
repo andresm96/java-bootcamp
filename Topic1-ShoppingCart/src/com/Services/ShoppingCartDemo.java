@@ -16,10 +16,12 @@ public class ShoppingCartDemo {
 		item = new Product("Jeans", 20.00);
 		cart.add(item);
 		offer.add(item);
+		cart.add(offer);
 		item = new Product("Notebook", 500.00);
 		cart.add(item);
 		
-		offer.print();
+		System.out.println(offer.toString());
+		System.out.println();
 		
 		cart.listItems();
 		

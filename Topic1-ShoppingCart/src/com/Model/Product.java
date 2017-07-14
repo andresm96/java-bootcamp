@@ -1,6 +1,6 @@
 package com.Model;
 
-public class Product {
+public class Product extends Item {
 
 	private String name;
 	private Double price;

@@ -5,52 +5,52 @@ import java.util.List;
 
 public class ShoppingCart {
 
-	private List<Product> items;
+	private List<Item> items;
 
 	public ShoppingCart() {
-		this.items = new ArrayList<Product>();
+		this.items = new ArrayList<Item>();
 	}
 
-	public void add(Product product) {
-		items.add(product);
+	public void add(Item Item) {
+		items.add(Item);
 	}
 
-	public void remove(Product product) {
-		items.remove(product);
+	public void remove(Item Item) {
+		items.remove(Item);
 	}
 
 	public Double getTotal() {
 
 		Double sum = (double) 0;
-		for (Product item : items) {
+		for (Item item : items) {
 			sum += item.getPrice();
 		}
 		return sum;
 	}
 
-	public List<Product> getItems() {
+	public List<Item> getItems() {
 		return items;
 	}
 
-	public Product getCheapest() {
+	public Item getCheapest() {
 
-		Product cheapest = items.get(0);
+		Item cheapest = items.get(0);
 
-		for (Product product : items) {
-			if (product.getPrice() < cheapest.getPrice()) {
-				cheapest = product;
+		for (Item Item : items) {
+			if (Item.getPrice() < cheapest.getPrice()) {
+				cheapest = Item;
 			}
 		}
 		return cheapest;
 	}
 
-	public Product getExpensive() {
+	public Item getExpensive() {
 
-		Product expensive = items.get(0);
+		Item expensive = items.get(0);
 
-		for (Product product : items) {
-			if (product.getPrice() > expensive.getPrice()) {
-				expensive = product;
+		for (Item Item : items) {
+			if (Item.getPrice() > expensive.getPrice()) {
+				expensive = Item;
 			}
 		}
 		return expensive;
@@ -62,8 +62,8 @@ public class ShoppingCart {
 			System.out.println("The cart is empty!");
 		} else {
 			System.out.println("Cart Items: ");
-			for (Product product : items) {
-				System.out.println(product.toString());
+			for (Item Item : items) {
+				System.out.println(Item.toString());
 			}
 			System.out.println("Total: $" + this.getTotal());
 			System.out.println();

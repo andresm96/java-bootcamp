@@ -1,5 +1,6 @@
 package com.Services;
 
+import com.Model.Item;
 import com.Model.Product;
 import com.Model.ShoppingCart;
 
@@ -25,7 +26,7 @@ public class CashStrategy extends PaymentStrategy {
 
 		final double discountRate = 0.9;
 		Double total = cart.getTotal();
-		Product expensive = cart.getExpensive();
+		Item expensive = cart.getExpensive();
 		total -= ((expensive.getPrice()) * discountRate);
 		System.out.println("Total paid with Cash: $" + total);
 	}
