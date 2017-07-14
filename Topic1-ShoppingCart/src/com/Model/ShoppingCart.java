@@ -65,8 +65,10 @@ public class ShoppingCart {
 			for (Product product : items) {
 				System.out.println(product.toString());
 			}
-			System.out.println("Total: " + this.getTotal());
+			System.out.println("Total: $" + this.getTotal());
+			System.out.println();
 		}
+		
 
 	}
 

@@ -18,7 +18,7 @@ public class PayPalStrategy extends PaymentStrategy {
 	@Override
 	public void pay() {
 
-		System.out.println("Total Purchase: " + cart.getTotal());
+		System.out.println("Total Purchase: $" + cart.getTotal());
 		System.out.println("Bonus: The cheapest item is for free");
 
 	}
@@ -29,7 +29,7 @@ public class PayPalStrategy extends PaymentStrategy {
 		Double total = cart.getTotal();
 
 		total -= cart.getCheapest().getPrice();
-		System.out.println("Total paid with PayPal: " + total);
+		System.out.println("Total paid with PayPal: $" + total);
 	}
 
 }

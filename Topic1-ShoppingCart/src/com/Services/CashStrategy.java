@@ -15,7 +15,7 @@ public class CashStrategy extends PaymentStrategy {
 	@Override
 	public void pay() {
 
-		System.out.println("Total Purchase: " + cart.getTotal());
+		System.out.println("Total Purchase: $" + cart.getTotal());
 		System.out.println("Bonus: 90% of the most expensive item is free");
 
 	}
@@ -27,6 +27,6 @@ public class CashStrategy extends PaymentStrategy {
 		Double total = cart.getTotal();
 		Product expensive = cart.getExpensive();
 		total -= ((expensive.getPrice()) * discountRate);
-		System.out.println("Total paid with Cash: " + total);
+		System.out.println("Total paid with Cash: $" + total);
 	}
 }
