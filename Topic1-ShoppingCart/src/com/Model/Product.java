@@ -8,6 +8,7 @@ public class Product extends Item {
 	public Product(String name, Double price) {
 		this.name = name;
 		this.price = price;
+		super.reportChange("item");
 	}
 
 	public String getName() {
@@ -16,6 +17,11 @@ public class Product extends Item {
 
 	public Double getPrice() {
 		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+		super.reportChange("price");
 	}
 
 	@Override

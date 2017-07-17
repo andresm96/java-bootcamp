@@ -4,16 +4,26 @@ public abstract class PaymentStrategy {
 
 	private static long id = 0;
 
-	public abstract void pay();
+	public abstract String pay();
 
-	public abstract void discount();
+	public abstract String discount();
+
+	public abstract String toString();
 
 	public void payWithDiscount() {
-		
-		pay();
-		discount();
-		System.out.println("Identification of payment transaction: " + getNewId());
+
+		Long newId = getNewId();
+		String paymentInfo ;
+		paymentInfo = this.toString();
+		paymentInfo += pay();
+		paymentInfo += discount();
+		paymentInfo += "Identification of payment transaction: " + newId;
+
+		System.out.println(paymentInfo);
 		System.out.println();
+
+		MailNotifyTransaction newTransaction = new MailNotifyTransaction();
+		newTransaction.report(paymentInfo);
 	}
 
 	public static long getNewId() {

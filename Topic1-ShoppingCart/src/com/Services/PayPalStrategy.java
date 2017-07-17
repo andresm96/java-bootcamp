@@ -16,20 +16,31 @@ public class PayPalStrategy extends PaymentStrategy {
 	}
 
 	@Override
-	public void pay() {
+	public String pay() {
 
-		System.out.println("Total Purchase: $" + cart.getTotal());
-		System.out.println("Bonus: The cheapest item is for free");
+		String info;
+		info = "Total Purchase: $" + cart.getTotal() + "\n";
+		info += "Bonus: The cheapest item is for free\n";
+		return info;
 
 	}
 
 	@Override
-	public void discount() {
+	public String discount() {
 
+		String info;
 		Double total = cart.getTotal();
 
 		total -= cart.getCheapest().getPrice();
-		System.out.println("Total paid with PayPal: $" + total);
+		info = "Total paid with PayPal: $" + total + "\n";
+		return info;
+	}
+
+	@Override
+	public String toString() {
+		String info;
+		info = "Payment method: PayPal [User email: " + email + "]\n";
+		return info;
 	}
 
 }

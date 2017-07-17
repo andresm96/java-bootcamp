@@ -30,7 +30,13 @@ public class Offer extends Item {
 		return name;
 	}
 
-	public Double getPrice() {
+	public Double getPrice(){
+		if (price == null){
+			calculatePrice();
+		}
+		return price;
+	}
+	public void calculatePrice() {
 
 		/*
 		 * Just an example of quantity and discount
@@ -46,7 +52,13 @@ public class Offer extends Item {
 			discount = 0.3;
 		}
 		price = total - (total * discount);
-		return price;
+		super.reportChange("item");
+		
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+		super.reportChange("price");
 	}
 
 	public double getTotal() {

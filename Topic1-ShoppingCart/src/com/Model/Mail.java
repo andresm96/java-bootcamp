@@ -17,7 +17,9 @@ public class Mail {
 
 	@Override
 	public String toString() {
-		String mail = "To: " + to + "\nFrom: " + from + "\nSubjet: " + subjet + "\nBody:\n" + body;
+		String mail = "****************************************\n";
+		mail += "To: " + to + "\nFrom: " + from + "\nSubjet: " + subjet + "\nBody:\n" + body + "\n";
+		mail += "****************************************\n\n";
 		return mail;
 	}
 
