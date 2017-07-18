@@ -3,17 +3,16 @@ package com.Services;
 public abstract class PaymentStrategy {
 
 	private static long id = 0;
+	public static Mailer mailer = new Mailer();
 
 	public abstract String pay();
 
 	public abstract String discount();
 
-	public abstract String toString();
-
 	public void payWithDiscount() {
 
 		Long newId = getNewId();
-		String paymentInfo ;
+		String paymentInfo;
 		paymentInfo = this.toString();
 		paymentInfo += pay();
 		paymentInfo += discount();
@@ -21,9 +20,8 @@ public abstract class PaymentStrategy {
 
 		System.out.println(paymentInfo);
 		System.out.println();
-
-		MailNotifyTransaction newTransaction = new MailNotifyTransaction();
-		newTransaction.report(paymentInfo);
+		
+		mailer.sendNewTransaction(paymentInfo);
 	}
 
 	public static long getNewId() {

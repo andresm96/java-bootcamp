@@ -1,10 +1,10 @@
 package com.Services;
 
 public interface MailNotify {
-	
-	/*
-	 * Command pattern
-	 */
-	
-	public void report(String message);
+
+	public void sendChangePrice(String body);
+
+	public void sendNewItem(String body);
+
+	public void sendNewTransaction(String body);
 }

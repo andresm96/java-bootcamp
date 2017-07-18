@@ -30,12 +30,13 @@ public class Offer extends Item {
 		return name;
 	}
 
-	public Double getPrice(){
-		if (price == null){
+	public Double getPrice() {
+		if (price == null) {
 			calculatePrice();
 		}
 		return price;
 	}
+
 	public void calculatePrice() {
 
 		/*
@@ -52,13 +53,13 @@ public class Offer extends Item {
 			discount = 0.3;
 		}
 		price = total - (total * discount);
-		super.reportChange("item");
-		
+		notifyItem(this.toString());
+
 	}
 
 	public void setPrice(Double price) {
 		this.price = price;
-		super.reportChange("price");
+		notifyPrice(this.toString());
 	}
 
 	public double getTotal() {

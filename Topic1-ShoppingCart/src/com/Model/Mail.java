@@ -7,11 +7,35 @@ public class Mail {
 	private String subjet;
 	private String body;
 
-	public Mail(String to, String from, String subjet, String body) {
-		super();
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
 		this.to = to;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
 		this.from = from;
+	}
+
+	public String getSubjet() {
+		return subjet;
+	}
+
+	public void setSubjet(String subjet) {
 		this.subjet = subjet;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
 		this.body = body;
 	}
 
