@@ -12,6 +12,7 @@ public class ShoppingCartDemo {
 		cart.add(item);
 		offer.add(item);
 		item = new Product("Cellphone", 280.00);
+		item.setPrice(270.00);
 		cart.add(item);
 		item = new Product("Jeans", 20.00);
 		cart.add(item);

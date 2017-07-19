@@ -16,20 +16,30 @@ public class CreditCardStrategy extends PaymentStrategy {
 	}
 
 	@Override
-	public void pay() {
+	public String pay() {
 
-		System.out.println("Total Purchase: $" + cart.getTotal());
-		System.out.println("Bonus: 10%");
-
+		String info;
+		info = "Total Purchase: $" + cart.getTotal() + "\n";
+		info += "Bonus: 10%\n";
+		return info;
 	}
 
 	@Override
-	public void discount() {
+	public String discount() {
 
+		String info;
 		final double discountRate = 0.1;
 		Double total = cart.getTotal();
 		total -= (total * discountRate);
-		System.out.println("Total paid with credit/debit card: $" + total);
+		info = "Total paid with credit/debit card: $" + total + "\n";
+		return info;
+	}
+
+	@Override
+	public String toString() {
+		String info;
+		info = "Payment method: Credit Card [Name: " + name + ", Card Number: " + cardNumber + "]\n";
+		return info;
 	}
 
 }
