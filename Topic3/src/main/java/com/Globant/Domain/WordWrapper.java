@@ -23,10 +23,6 @@ public class WordWrapper {
 					supLimit += segment;
 					if (supLimit > sentence.length())
 						break;
-					/*
-					 * token = sentence.substring(infLimit, supLimit); text +=
-					 * token + "\n";
-					 */
 				} else {
 					token = sentence.substring(infLimit, supLimit);
 					text += token + "\n";
